@@ -6,7 +6,8 @@ An art-crowdsourcing experiment
 run
 ==========
 
-```npm install
+```
+npm install
 bower install
 grunt server
 ```
