@@ -90,7 +90,20 @@ body {
   }
 }
 
-#canvas, #editor {
+#image {
+  position: relative;
+}
+
+#image, #editor {
+  //line-height: 0;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+}
+
+#editor canvas {
   border: solid thin;
 }
 
@@ -98,4 +111,5 @@ body {
   border-color: red;
   border-style: solid;
   border-width: thin;
+  border-collapse: collapse;
 }

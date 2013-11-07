@@ -20,11 +20,11 @@ define([
     height: 100,
     template: JST['app/scripts/templates/panel.ejs'],
     initialize: function () {
-      this.render();
       var that = this;
       vent.on("editorInitialized", function (editor) {
         that.editor = editor;
       });
+      this.render();
     },
     render: function () {
       this.$el.html(this.template(this.model.toJSON()));
@@ -32,8 +32,9 @@ define([
     },
     loadFromEditor: function () {
       if (this.editor) {
-        var panelContext = this.$el.find('> canvas')[0].getContext('2d');
-        panelContext.drawImage(this.editor.el, 0, 0, this.width, this.height)
+        var panel = this.$el.find('> canvas')[0];
+        var panelContext = panel.getContext('2d');
+        panelContext.drawImage(this.editor.el, 0, 0, $(panel).width(), $(panel).height())
       }
     }
   });

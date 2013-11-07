@@ -1,14 +1,11 @@
-define(['backbone', 'sketch'], function (Backbone) {
+define(['backbone', 'vent', 'sketch'], function (Backbone, vent) {
 
   var EditorView = Backbone.View.extend({
     tagName: 'canvas',
-    height: 300,
-    width: 300,
-    initialize: function () {
-      return this.render();
-    },
+    width: 700,
     render: function () {
-      this.$el.attr({height: this.height, width: this.width}).sketch();
+      this.$el.attr({height: this.width / this.aspectRatio, width: this.width}).sketch();
+      vent.trigger('editorInitialized', this);
       return this;
     }
   });

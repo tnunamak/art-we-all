@@ -8,7 +8,8 @@ define([
   'use strict';
 
   var PanelCollection = Backbone.Collection.extend({
-    model: PanelModel
+    model: PanelModel,
+    rowWidth: 0
   });
 
   return PanelCollection;
